@@ -5,11 +5,10 @@
   font-family: "Roboto", sans-serif;
 }
 :root {
-  --main-blue: #0077b8;
+  --main-blue: #0040b8;
   --hover-blue: #008bd6;
-  --text-color: #0f172a;
-  --dark-blue-background: #0f172a;
   --light-blue: #dbe9f1;
+  --main-trans: 0.5s;
 }
 html {
   scroll-behavior: smooth;
@@ -27,7 +26,12 @@ h1 {
   line-height: 1.1;
   margin-bottom: 0.5rem;
 }
-
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 /* Small devices (≥576px) */
 @media (min-width: 576px) {
   .container {
@@ -63,28 +67,25 @@ h1 {
   }
 }
 
-/* Header Styling */
+/* header Styling */
 header {
   padding: 10px 0px;
-  box-shadow: 0px 0px 10px rgb(207, 207, 207);
+  position: relative;
 }
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 header .container h1 {
+  display: flex;
+  align-items: center;
+}
+header .container h1 i {
   color: var(--main-blue);
 }
-header .container h1 span i {
-  background-color:var(--main-blue);
-  color: white;
-  padding: 4px;
-  border-radius: 4px;
-  display: inline-block;
-  line-height: 1;
-  vertical-align: middle;
+header .container h1 span {
+  color: var(--main-blue);
 }
 header .container nav button {
   border: none;
@@ -92,14 +93,25 @@ header .container nav button {
   background-color: transparent;
   cursor: pointer;
 }
-header .container nav button:focus {
-  outline: 2px solid var(--main-blue);
-  outline-offset: 2px;
-  border-radius: 4px;
+
+header .container nav ul {
+  position:absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(226, 226, 226);
+}
+header .container nav ul li {
+  margin: 12px 0px;
+}
+header .container nav ul li a {
+  padding: 4px;
+  color: black;
+  transition:var(--main-trans);
+  display: block;
+  text-align: center;
 }
 header .container nav button i {
-  font-size: 1.12rem;
   color: var(--main-blue);
+  font-size: 1.125rem;
 }
-
-/* Header Styling */
+/* header Styling */
